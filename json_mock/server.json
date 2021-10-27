@@ -1,0 +1,18 @@
+{
+    "groups":
+    [
+      { "id": 1, "name": "automation", "total_budget": 300, "used_budget": 200, "total_envs": 35 },
+      { "id": 2, "name": "mallops", "total_budget": 200, "used_budget": 150, "total_envs": 15 },
+      { "id": 3, "name": "dev", "total_budget": 200, "used_budget": 200, "total_envs": 10 }
+    ],
+    "builds":[
+        {"time_window": 1, "passed": 40, "failed": 2},
+        {"time_window": 3, "passed": 140, "failed": 6},
+        {"time_window": 24, "passed": 500, "failed": 29},
+        {"time_window": 72, "passed": 2000, "failed": 50}
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "nnnn" }
+  }
