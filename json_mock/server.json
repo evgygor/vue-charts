@@ -14,5 +14,27 @@
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
-    "profile": { "name": "nnnn" }
+    "profile": { "name": "nnnn" },
+
+    "users": [
+      { "dev":
+        { "Sharon": 1, "Noam": 3}
+      }
+    ],
+
+    "automation": [
+        {"id": 1, "name": "blvla", "started_builds": 50},
+        {"id": 2, "name": "aaa", "started_builds": 10},
+        {"id": 3, "name": "blvvvvvvla", "started_builds": 11}
+    ],
+    "mallops": [
+        {"id": 1, "name": "blvla", "started_builds": 50},
+        {"id": 2, "name": "aaa", "started_builds": 10},
+        {"id": 3, "name": "blvvvvvvla", "started_builds": 11}
+    ],
+    "dev": [
+        {"id": 1, "name": "blvla", "started_builds": 50},
+        {"id": 2, "name": "aaa", "started_builds": 10},
+        {"id": 3, "name": "blvvvvvvla", "started_builds": 11}
+    ]
   }
