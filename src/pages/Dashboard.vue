@@ -221,18 +221,19 @@
       >
         <nav-tabs-card>
           <template slot="content">
-            <span class="md-nav-tabs-title">Tasks:</span>
+            <span class="md-nav-tabs-title">Teams:</span>
             <md-tabs class="md-success" md-alignment="left">
-              <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
-                <nav-tabs-table></nav-tabs-table>
+              <md-tab id="tab-home" md-label="Automation">
+                  <teams-table table-header-color="orange" selectedTeam="automation"></teams-table>
+
               </md-tab>
 
-              <md-tab id="tab-pages" md-label="Website" md-icon="code">
-                <nav-tabs-table></nav-tabs-table>
+              <md-tab id="tab-pages" md-label="Mallops">
+                <teams-table table-header-color="orange" selectedTeam="mallops"></teams-table>
               </md-tab>
 
-              <md-tab id="tab-posts" md-label="server" md-icon="cloud">
-                <nav-tabs-table></nav-tabs-table>
+              <md-tab id="tab-posts" md-label="Dev">
+                <teams-table table-header-color="orange" selectedTeam="dev"></teams-table>
               </md-tab>
             </md-tabs>
           </template>
@@ -250,6 +251,7 @@ import {
   NavTabsCard,
   NavTabsTable,
   OrderedTable,
+  TeamsTable
 } from "@/components";
 
 export default {
@@ -260,6 +262,7 @@ export default {
     NavTabsCard,
     NavTabsTable,
     OrderedTable,
+    TeamsTable
   },
 
 beforeMount(){

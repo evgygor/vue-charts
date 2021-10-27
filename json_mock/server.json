@@ -28,13 +28,13 @@
         {"id": 3, "name": "blvvvvvvla", "started_builds": 11}
     ],
     "mallops": [
-        {"id": 1, "name": "blvla", "started_builds": 50},
-        {"id": 2, "name": "aaa", "started_builds": 10},
-        {"id": 3, "name": "blvvvvvvla", "started_builds": 11}
+        {"id": 1, "name": "bbb", "started_builds": 50},
+        {"id": 2, "name": "bbbbbb", "started_builds": 10},
+        {"id": 3, "name": "bbbbbbbbbb", "started_builds": 11}
     ],
     "dev": [
-        {"id": 1, "name": "blvla", "started_builds": 50},
-        {"id": 2, "name": "aaa", "started_builds": 10},
-        {"id": 3, "name": "blvvvvvvla", "started_builds": 11}
+        {"id": 1, "name": "ccccccc", "started_builds": 50},
+        {"id": 2, "name": "ccccccccccc", "started_builds": 10},
+        {"id": 3, "name": "cccccccccccccccccc", "started_builds": 11}
     ]
   }
