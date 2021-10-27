@@ -1,32 +1,76 @@
 <template>
   <div class="content">
     <div class="md-layout">
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
-      >
-        <CChartPieExample
-        :chart-time-window="'1'"
-        />
-
+      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+        <stats-card>    
+          <template slot="header">
+            <div>1 Hour</div>
+          </template>
+          <template slot="content"> 
+            <CChartPieExample 
+            :chart-data="pieChartData.onehour"/>
+          </template>
+          <template slot="footer">
+          <div class="stats" v-bind:style="bigblackFont">
+            <div class="title"> Passed: {{pieChartData.onehour[0]}}</div>
+            <div class="title" v-bind:style="styleObject" > Failed: {{pieChartData.onehour[1]}}</div>
+          </div>
+        </template>
+        </stats-card >
       </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
-      >
-        <CChartPieExample
-        :chart-time-window="'3'"
-
-        />
-
+       <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+        <stats-card>    
+          <template slot="header">
+            <div>3 Hours</div>
+          </template>
+          <template slot="content"> 
+            <CChartPieExample 
+            :chart-data="pieChartData.threehours"/>
+          </template>
+          <template slot="footer">
+          <div class="stats" v-bind:style="bigblackFont">
+            <div> Passed: {{pieChartData.threehours[0]}}</div>
+            <div v-bind:style="styleObject" > Failed: {{pieChartData.threehours[1]}}</div>
+          </div>
+        </template>
+        </stats-card >
       </div>
 
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
-      >
-        <CChartPieExample
-        :chart-time-window="'24'"/>
-
+      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+        <stats-card>    
+          <template slot="header">
+            <div>24 Hours</div>
+          </template>
+          <template slot="content"> 
+            <CChartPieExample 
+            :chart-data="pieChartData.twentyfourhours"/>
+          </template>
+          <template slot="footer">
+          <div class="stats" v-bind:style="bigblackFont">
+            <div> Passed: {{pieChartData.twentyfourhours[0]}}</div>
+            <div v-bind:style="styleObject" > Failed: {{pieChartData.twentyfourhours[1]}}</div>
+          </div>
+        </template>
+        </stats-card >
       </div>
 
+      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+        <stats-card>    
+          <template slot="header">
+            <div>72 Hours</div>
+          </template>
+          <template slot="content" > 
+            <CChartPieExample 
+            :chart-data="pieChartData.seventytwohours"/>
+          </template>
+          <template slot="footer" >
+          <div class="stats" v-bind:style="bigblackFont">
+            <div> Passed: {{pieChartData.seventytwohours[0]}}</div>
+            <div v-bind:style="styleObject" > Failed: {{pieChartData.seventytwohours[1]}}</div>
+          </div>
+        </template>
+        </stats-card >
+      </div>
       <div
         class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
       >
@@ -222,19 +266,22 @@ beforeMount(){
 
   this.buildsData = this.getBuildsData()
 },
-
-  data() {
-
-
-    return {
-            function (){
-        console.log("asdasdasdads")
+data() {
+  // const a =  posts
+  return {
+      pieChartData:{
+        onehour:[],
+        threehours:[],
+        twentyfourhours:[],
+        seventytwohours:[]
       },
-    buildsData2: {
-      data: this.buildsData,
-
+       styleObject: {
+        paddingLeft: '20px',
       },
-
+      bigblackFont:{
+        fontSize:"Large",
+        color:"black"
+      },
       dailySalesChart: {
         data: {
           labels: ["passed", "failed"],
@@ -320,16 +367,14 @@ beforeMount(){
   },
 
    methods: {
-
       async getBuildsData() {
       try {
-        let response = await fetch("http://localhost:3000/builds");
-        this.posts = await response.json();
-        console.log(this.posts)
+        let response = await fetch("http://localhost:3000/build");
+        this.pieChartData = await response.json();
+        console.log(this.pieChartData)
       } catch (error) {
         console.log(error);
       }
-
     },
    }
 };

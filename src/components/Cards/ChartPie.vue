@@ -2,6 +2,7 @@
   <CChartPie
     :datasets="defaultDatasets"
     :labels="['Passed', 'Failed']"
+    :showLabel="false"
   />
 </template>
 
@@ -11,10 +12,9 @@ import { CChartPie } from '@coreui/vue-chartjs'
 export default {
   name: 'CChartPieExample',
   props: {
-    chartTimeWindow: {
-      type: String,
-      default: "1", // 3 | 6 | 24
-    },
+    chartData:{
+
+    }
   },
   components: { CChartPie },
   computed: {
@@ -25,7 +25,7 @@ export default {
             '#41B883',
             '#E46651'
           ],
-          data: [40, 20]
+          data: this.chartData
         }
       ]
     }
